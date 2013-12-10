@@ -1,0 +1,85 @@
+
+
+Traits: 
+
+Visual (has css)
+Replicable
+Identifiable
+Container
+Profile
+	EnvironmentProfile
+	ServerProfile
+	CredentialProfile
+
+Classes
+
+Page
+Template
+Component
+VideoPlayer
+VideoPlaylist
+VideoChannel
+Slideshow
+Slide
+Image
+Sharebar
+Rotator
+
+
+Runtime
+	def connect(env: EnvironmentProfile): Environment
+
+Environment
+	def for(server: ServerProfile): Server
+	
+Server
+	def as(credential: CredentialProfile): Session
+		
+Session
+
+connect to qa1 for author using credential
+find Sharebar where Sharebar.css contains 'utilities-top' { sharebar =>
+	page = locate sharebar containingPage
+	find Contributor in page { contributor =>
+		delete sharebar
+		shareContainer = Container with Css('floatLeft') add 
+		add shareContainer before contributor Sharebar	
+	}
+}
+
+runtime.connect(url, ) { session =>
+	
+}
+
+
+
+
+def connect(): Session {
+
+}
+
+connect as Admin to QA1 for Author
+
+
+
+load config file
+change the file to the new location
+
+
+trait Runtime {
+	def connect(serverProfile: ServerProfile): Session;
+}
+
+trait Session {
+	def query(queryString: String): List[Doc];
+	def createQueryBuilder(): QueryBuilder;
+}
+
+trait Doc {
+	def location
+}
+
+
+
+
+	

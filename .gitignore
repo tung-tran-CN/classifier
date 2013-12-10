@@ -1,0 +1,5 @@
+*.org
+*.swp
+*.orig
+*.class
+target/
